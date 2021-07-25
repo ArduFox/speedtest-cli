@@ -7,7 +7,19 @@ they exit with `ERROR: Unable to connect to servers to test latency`
 
 And yes my aother cronjobs work as intended and i don't think am doing cron the wrong way.
 
-## debug and prepare to fork :fork:
+
+## :star: it works :star:
+- code is up and running
+- appends to hard coded csv file with local path :-(
+- testing if it works for some hours   
+
+
+## to do :hammer:
+
+1. Work on test code an monitor the results and improve this code to become more robust
+1. Save the results to my .csv data collection. 
+
+## debug and prepare to fork :construction:
 
 - line 1440 in `/usr/local/lib/python2.7/dist-packages/speedtest.py` calls function `get_best_server(self, servers=None)`
   - if first entry in list of dict (key=latency, val = servername) ist None / empty after sorting the servers by latency then raise error
@@ -22,6 +34,13 @@ And yes my aother cronjobs work as intended and i don't think am doing cron the 
   -  uses the lib and checks step by step content of servers at all, closest servers, best servers
 - transport this code to both Raspis and into this fork
 - testing inside and outside cron
+
+### first results
+
+- from time to time speedtest doesn't find the initial list of servers
+  1. retry this early stage for some times with maybe increasing waiting times
+  1. have a standard list of closest servers as fall back. Maybe after each succesfull attempt save them to a file.
+
 
 ## internet ressources
 

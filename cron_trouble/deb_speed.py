@@ -8,6 +8,10 @@ threads = None
 # If you want to use a single threaded test
 # threads = 1
 
+print("---------------------------------------------")
+print("deb_speed debugging speedtest inside cron job")
+print("---------------------------------------------\n")
+
 s = speedtest.Speedtest()
 s.get_servers(servers)
 
@@ -30,6 +34,19 @@ if (len(s.servers)> 0):
         print("\n\nbest Servers dict with " + str(len(s.best)) + " attributes" )
         if (len(s.best)> 0):
             print(s.best)
+            
+
+            s.download(threads=threads)
+            s.upload(threads=threads)
+            s.results.share()
+
+            print("\n-----------------")
+            print(  "results from test")
+            print(  "-----------------")
+
+            print (s.results.dict())
+
+print("done.\n")
 
 
 

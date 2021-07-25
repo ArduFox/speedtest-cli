@@ -5,7 +5,7 @@ I am using speedtest (`speedtest-cli==2.1.4b1`) as python library and also speed
 If I start my jobs as standard user or as root everything works as intended. But if I start my jobs as cronjobs, 
 they exit with `ERROR: Unable to connect to servers to test latency`
 
-And yes my aother cronjobs work as intended and i don't think am doing cron the wrong way.
+And yes my other cronjobs work as intended and i don't think am doing cron the wrong way.
 
 
 ## :star: it works :star:

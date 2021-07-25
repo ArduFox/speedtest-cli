@@ -1,4 +1,4 @@
-speedtest-cli
+speedtest-cli fork by ArduFox to understand and fix problems inside cron jobs, see the  `extra <https://github.com/ArduFox/speedtest-cli/blob/Raspi-Cron-trouble/cron_trouble.md>`_.
 =============
 
 Command line interface for testing internet bandwidth using

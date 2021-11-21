@@ -10,13 +10,15 @@ And yes my other cronjobs work as intended and i don't think am doing cron the w
 
 ## :star: it works :star:
 - code is up and running
-- appends to hard coded csv file with local path :-(
-- testing if it works for some hours   
+- seems from time to time the lib is unable to load the json list of all available servers from `www.speedtest.net` and exits with error
+- my python script tests each stage from obtaining servers (some retries with increasing delay), filtering the closest servers (no retry) and finding the best one (`get_best_servers`: no retry)
+- then it it calls the speedtest and collects data into csv-file
+- worked in my environment. Until now only one retry at fetching server list (`get_servers()`) has been sufficient.
 
 
 ## to do :hammer:
 
-1. Work on test code an monitor the results and improve this code to become more robust
+1. Work on test code and monitor the results and improve this code to become more robust
 1. Save the results to my .csv data collection. 
 
 ## debug and prepare to fork :construction:
